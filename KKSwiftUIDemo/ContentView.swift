@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.appState.number) var number
     var body: some View {
         NavigationStack {
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("welcome!")
+            List{
+                    ForEach(NaviDestination.allCases) { destination in
+                        NavigationLink(value: destination) {
+                            Text(destination.rawValue)
+                        }
+                    }
             }
-            .padding()
+            .navigationDestination(for: NaviDestination.self, destination: { $0})
             .navigationTitle("SwiftUI Demo!")
         }
     }
