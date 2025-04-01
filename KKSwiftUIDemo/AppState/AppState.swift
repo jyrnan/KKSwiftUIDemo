@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 @Observable
 class AppState {
     var number: Int = 0
@@ -17,4 +19,8 @@ class AppState {
     func increment() {
         number += 1
     }
+}
+
+extension TreeNode {
+    static let appState = TreeNode(name: "appState")
 }

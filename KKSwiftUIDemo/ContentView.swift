@@ -9,16 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.appState.number) var number
+    var items: [TreeNode] = TreeNode.content
+        
     var body: some View {
         NavigationStack {
-            List{
-                    ForEach(NaviDestination.allCases) { destination in
-                        NavigationLink(value: destination) {
-                            Text(destination.rawValue)
-                        }
-                    }
+            List {
+                RecursiveTreeView(items: items)
             }
-            .navigationDestination(for: NaviDestination.self, destination: { $0})
+            .navigationDestination(for: NaviDestination.self) { $0 }
             .navigationTitle("SwiftUI Demo!")
         }
     }
