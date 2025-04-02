@@ -19,6 +19,7 @@ struct ContentView: View {
             .navigationDestination(for: NaviDestination.self) { $0 }
             .navigationTitle("SwiftUI Demo!")
         }
+        .tint(.red)
     }
 }
 
