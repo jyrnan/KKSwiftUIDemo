@@ -5,6 +5,7 @@
 //  Created by jyrnan on 2025/3/31.
 //
 
+// updae for xcode cloud
 import SwiftUI
 
 enum NaviDestination: String, CaseIterable, View, Identifiable {
