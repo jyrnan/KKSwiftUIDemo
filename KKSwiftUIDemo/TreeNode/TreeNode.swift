@@ -13,10 +13,10 @@ struct TreeNode: Identifiable, View {
     var isExpanded: Bool = false
 
     var body: some View {
-//            content()
         Text(name)
             .foregroundStyle(children.isEmpty ? .blue : .primary)
             .bold(!children.isEmpty)
+            .scaleEffect(isExpanded ? 1.2 : 1)
     }
 }
 
