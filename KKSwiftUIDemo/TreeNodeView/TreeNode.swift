@@ -24,7 +24,6 @@ extension TreeNode {
     static var content: [TreeNode] {
         [
             .appState,
-            .appState,
             .transition,
             .text
         ]
