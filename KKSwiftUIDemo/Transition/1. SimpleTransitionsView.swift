@@ -115,6 +115,23 @@ struct SimpleTransitionsView: View {
                         }
                     }
                 }
+                
+                GroupBox(".push") {
+                    VStack {
+                        if showText {
+                            Text("Push from bottom!")
+                                .font(.title)
+                                .transition(.push(from: .bottom))
+                        } else {
+                            Text(" ") // Empty placeholder maintaining space
+                                .font(.title)
+                        }
+                        
+                        Button(showText ? "Hide" : "Show") {
+                            showText.toggle()
+                        }
+                    }
+                }
                 Spacer()
             }
             .contentMargins(10, for: .scrollContent)

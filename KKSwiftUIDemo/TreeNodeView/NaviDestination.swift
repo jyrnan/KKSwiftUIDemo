@@ -14,6 +14,7 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
     case appState
     case transition
     case text1
+    case complexScrollAnimation
 
     var body: some View {
         switch self {
@@ -23,6 +24,8 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
             TransitionTab()
         case .text1:
             Text("Item 1")
+        case .complexScrollAnimation:
+            ComplexScrollAnimation()
         }
     }
 }

@@ -25,16 +25,19 @@ extension TreeNode {
         [
             .appState,
             .transition,
-            .text
+            .text,
+            .scrollView
         ]
     }
 
-    static var text: TreeNode = .init( name: "text", children: [
+    static var scrollView: TreeNode = .init(name: "ScrollView", children: [
+        .init(name: "complexScrollAnimation")])
+
+    static var text: TreeNode = .init(name: "text", children: [
         .init(name: "text1"),
         .init(name: "text2"),
         .init(name: "text3")
     ])
-        
 }
 
 extension TreeNode {
