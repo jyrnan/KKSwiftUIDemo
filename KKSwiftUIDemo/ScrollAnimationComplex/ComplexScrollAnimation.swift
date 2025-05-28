@@ -71,7 +71,7 @@ struct ComplexScrollAnimation: View {
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
                    
-                        ForEach(0..<15) { index in
+                        ForEach(0..<415) { index in
                             listView(index)
                         }
                     
