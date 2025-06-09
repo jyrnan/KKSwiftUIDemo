@@ -27,6 +27,8 @@ struct ContentTransitionDemo: View {
                 .onTapGesture {
                     number += 1
                 }
+            Divider()
+            CurrencyView()
         }
     }
 }
@@ -53,5 +55,5 @@ struct CurrencyView: View {
 }
 
 #Preview {
-    CurrencyView()
+    ContentTransitionDemo()
 }

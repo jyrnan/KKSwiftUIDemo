@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import LivsyWeekCalendar
 
 struct ContentView: View {
     @Environment(\.appState.number) var number
@@ -13,13 +14,16 @@ struct ContentView: View {
         
     var body: some View {
         NavigationStack {
+            
             List {
                 RecursiveTreeView(items: items)
+                    
             }
             .navigationDestination(for: NaviDestination.self) { $0 }
             .navigationTitle("SwiftUI Demo!")
+            
         }
-        .tint(.red)
+        
     }
 }
 

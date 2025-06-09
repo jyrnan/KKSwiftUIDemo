@@ -12,20 +12,76 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
     var id: String { self.rawValue }
 
     case appState
+    case containerValues
+    case Debounce
+    
     case transition
-    case text1
+    case ContentTransition
+    case KeyFrameAnimator
+    case ShakeEffect
+    case PhaseAnimator
+
     case complexScrollAnimation
+    case onScrollGeometryChange
+    case ScrollTargetBehavior
+
+    case RestrictedTextField
+    case StringFormat
+    
+    case FullScreenCover
+    case MapMask
+    case position
+    case splitView
+    
+    case WeekCalendar
 
     var body: some View {
         switch self {
         case .appState:
             AppStateView()
+        case .containerValues:
+            CustomList {
+                Text("Hello, World!")
+                    .isHighlied(true)
+            }
+        case .Debounce:
+            DebounceSearchView()
+            
         case .transition:
             TransitionTab()
-        case .text1:
-            Text("Item 1")
+        case .ContentTransition:
+            ContentTransitionDemo()
+        case .KeyFrameAnimator:
+            KeyFrame()
+        case .ShakeEffect:
+            ShakeEffectDemo()
+            case .PhaseAnimator:
+            PhaseAnimatorDemoView()
+            
+        
         case .complexScrollAnimation:
             ComplexScrollAnimation()
+        case .onScrollGeometryChange:
+            OnScrollGeometryChangeDemo()
+        case .ScrollTargetBehavior:
+            ScrollTargetBehaviorDemo()
+            
+        case .RestrictedTextField:
+            RestrictedTextFieldWrapper()
+            case .StringFormat:
+            StringFormatDemo()
+            
+        case .FullScreenCover:
+            FullScreenCoverView()
+        case .MapMask:
+            MapMaskView()
+            case .position:
+            PositionViewDemo()
+        case .splitView:
+            Splitview()
+            
+        case .WeekCalendar:
+            JYWeekView().environment(\.locale, .init(identifier: "zh_CN"))
         }
     }
 }

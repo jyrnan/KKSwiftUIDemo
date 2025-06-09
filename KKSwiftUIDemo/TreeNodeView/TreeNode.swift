@@ -17,26 +17,57 @@ struct TreeNode: Identifiable, View {
             .foregroundStyle(children.isEmpty ? .blue : .primary)
             .bold(!children.isEmpty)
             .scaleEffect(isExpanded ? 1.2 : 1)
+            .offset(x: isExpanded ? 10 : 0)
     }
 }
 
 extension TreeNode {
     static var content: [TreeNode] {
         [
-            .appState,
-            .transition,
-            .text,
-            .scrollView
+            .StateManagement,
+            .Animation,
+            .ScrollView,
+            .TextSample,
+            .ViewManagement,
+            .OtherDemo
         ]
     }
 
-    static var scrollView: TreeNode = .init(name: "ScrollView", children: [
-        .init(name: "complexScrollAnimation")])
-
-    static var text: TreeNode = .init(name: "text", children: [
-        .init(name: "text1"),
-        .init(name: "text2"),
-        .init(name: "text3")
+    static var StateManagement: TreeNode = .init(name: "State Management", children: [
+        .appState,
+        .init(name: "containerValues"),
+        .init(name: "Debounce")
+    ])
+    
+    static var Animation: TreeNode = .init(name: "Animation", children: [
+        .transition,
+        .init(name: "ContentTransition"),
+        .init(name: "KeyFrameAnimator"),
+        .init(name: "ShakeEffect"),
+        .init(name: "PhaseAnimator")
+            
+    ])
+    
+    static var ScrollView: TreeNode = .init(name: "ScrollView", children: [
+        .init(name: "complexScrollAnimation"),
+        .init(name: "onScrollGeometryChange"),
+        .init(name: "ScrollTargetBehavior")
+    ])
+    
+    static var TextSample: TreeNode = .init(name: "Text", children: [
+        .init(name: "RestrictedTextField"),
+        .init(name: "StringFormat")
+    
+    ])
+    static var ViewManagement: TreeNode = .init(name: "View Management", children: [
+        .init(name: "FullScreenCover"),
+        .init(name: "MapMask"),
+        .init(name: "position"),
+        .init(name: "splitView")
+    ])
+    
+    static var OtherDemo: TreeNode = .init(name: "Other Demo", children: [
+        .init(name: "WeekCalendar")
     ])
 }
 

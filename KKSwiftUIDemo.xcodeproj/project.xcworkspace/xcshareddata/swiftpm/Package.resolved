@@ -1,0 +1,15 @@
+{
+  "originHash" : "01a06e691d4ab2e3f2a0e9078af4697b3ea7ad898496626cb095912d3eb4cd3b",
+  "pins" : [
+    {
+      "identity" : "livsyweekcalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Livsy90/LivsyWeekCalendar.git",
+      "state" : {
+        "revision" : "434a1fd942cf4dc004d0db3a5a43a4584c364bfa",
+        "version" : "1.0.1"
+      }
+    }
+  ],
+  "version" : 3
+}

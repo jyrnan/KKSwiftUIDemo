@@ -25,21 +25,40 @@ extension Date {
         
         return week
     }
-    func currentWeek(of date: Date) -> [Date] {
+    func currentWeek(of date: Date = .now) -> Week {
         let calendar = Calendar.current
         guard let startOfWeek = calendar.dateInterval(of: .weekOfMonth, for: date)?.start else {
-            return []
+            return .init(days: Date.currentWeek)
         }
         
         
-        var week: [Date] = []
+        var weekDays: [Day] = []
         for index in 0..<7 {
             if let date = calendar.date(byAdding: .day, value: index, to: startOfWeek) {
-                week.append(date)
+                weekDays.append(Day.init(date:date))
             }
         }
         
-        return week
+        return .init(days: weekDays)
+    }
+    
+    func preWeek(of week: Week) -> Week {
+        let calendar = Calendar.current
+        guard let firstDay = week.days.first?.date,
+              let preWeekDay = calendar.date(byAdding: .weekOfYear, value: -1, to: firstDay) else { return currentWeek()}
+        return currentWeek(of: preWeekDay)
+    }
+    
+    func nextWeek(of week: Week) -> Week {
+        let calendar = Calendar.current
+        guard let firstDay = week.days.first?.date,
+              let nextWeekDay = calendar.date(byAdding: .weekOfYear, value: 1, to: firstDay) else { return currentWeek()}
+        return currentWeek(of: nextWeekDay)
+    }
+    
+    func currentWeeks() -> [Week] {
+        let currentWeek = currentWeek()
+       return [preWeek(of: currentWeek), currentWeek, nextWeek(of: currentWeek)]
     }
     
     func string(_ format:String) -> String {
@@ -58,4 +77,10 @@ extension Date {
         var id: String = UUID().uuidString
         var date: Date
     }
+    
+    struct Week: Identifiable {
+        var id: String = UUID().uuidString
+        var days: [Day]
+    }
+
 }

@@ -41,3 +41,16 @@ extension View {
             .containerValue(\.isHighlied, value)
     }
 }
+
+//extension CustomList {
+//    static var demo: CustomList =
+//        CustomList {
+//            Group {
+//                Text("Hello, World!")
+//            }
+//            Text("Hello, SwiftUI!")
+//                .isHighlied(true)
+//            Text("Hello, Custom List!")
+//        }
+//    
+//}

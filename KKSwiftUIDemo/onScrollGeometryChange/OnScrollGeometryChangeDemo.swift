@@ -10,7 +10,7 @@ import SwiftUI
 struct OnScrollGeometryChangeDemo: View {
     @State private var scrollGeometry: ScrollGeometry = .init(contentOffset: .zero, contentSize: .zero, contentInsets: .init(), containerSize: .zero)
     var body: some View {
-        NavigationStack{
+        
             
             ScrollView{
                 Text("Hello, World!")
@@ -29,10 +29,12 @@ struct OnScrollGeometryChangeDemo: View {
                 
                     .padding()
             }
-        }
+        
     }
 }
 
 #Preview {
-    OnScrollGeometryChangeDemo()
+    NavigationStack{
+        OnScrollGeometryChangeDemo()
+    }
 }
