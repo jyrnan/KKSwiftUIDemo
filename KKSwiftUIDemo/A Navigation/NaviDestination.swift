@@ -32,6 +32,7 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
     case MapMask
     case position
     case splitView
+    case ShareLink
     
     case WeekCalendar
 
@@ -79,6 +80,8 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
             PositionViewDemo()
         case .splitView:
             Splitview()
+        case .ShareLink:
+            ShareLinkDemo()
             
         case .WeekCalendar:
             JYWeekView().environment(\.locale, .init(identifier: "zh_CN"))

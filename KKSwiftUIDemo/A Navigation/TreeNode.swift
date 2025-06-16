@@ -63,7 +63,8 @@ extension TreeNode {
         .init(name: "FullScreenCover"),
         .init(name: "MapMask"),
         .init(name: "position"),
-        .init(name: "splitView")
+        .init(name: "splitView"),
+        .init(name: "ShareLink")
     ])
     
     static var OtherDemo: TreeNode = .init(name: "Other Demo", children: [

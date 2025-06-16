@@ -14,9 +14,6 @@ struct KKSwiftUIDemoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-//            Splitview()
-//           JYWeekView()
-//            RestrictedTextFieldWrapper()
         }
         .environment(\.appState, appState)
         .onChange(of: scenePhase) { oldValue, newValue in
