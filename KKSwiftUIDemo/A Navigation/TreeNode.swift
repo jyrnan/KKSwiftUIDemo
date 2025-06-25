@@ -44,7 +44,8 @@ extension TreeNode {
         .init(name: "ContentTransition"),
         .init(name: "KeyFrameAnimator"),
         .init(name: "ShakeEffect"),
-        .init(name: "PhaseAnimator")
+        .init(name: "PhaseAnimator"),
+        .init(name: "CardFlipAnimation")
             
     ])
     
@@ -68,7 +69,8 @@ extension TreeNode {
     ])
     
     static var OtherDemo: TreeNode = .init(name: "Other Demo", children: [
-        .init(name: "WeekCalendar")
+        .init(name: "WeekCalendar"),
+        .init(name: "GestureRecognition")
     ])
 }
 

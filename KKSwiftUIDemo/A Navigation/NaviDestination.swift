@@ -35,6 +35,8 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
     case ShareLink
     
     case WeekCalendar
+    case GestureRecognition
+    case CardFlipAnimation
 
     var body: some View {
         switch self {
@@ -85,6 +87,10 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
             
         case .WeekCalendar:
             JYWeekView().environment(\.locale, .init(identifier: "zh_CN"))
+        case .GestureRecognition:
+            GestureRecognitionDemo()
+        case .CardFlipAnimation:
+            CardFlipAnimationDemo()
         }
     }
 }
