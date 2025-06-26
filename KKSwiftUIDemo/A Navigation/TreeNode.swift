@@ -70,7 +70,8 @@ extension TreeNode {
     
     static var OtherDemo: TreeNode = .init(name: "Other Demo", children: [
         .init(name: "WeekCalendar"),
-        .init(name: "GestureRecognition")
+        .init(name: "GestureRecognition"),
+        .init(name: "CustomButtonStyle")
     ])
 }
 

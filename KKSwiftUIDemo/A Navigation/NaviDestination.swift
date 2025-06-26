@@ -37,6 +37,7 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
     case WeekCalendar
     case GestureRecognition
     case CardFlipAnimation
+    case CustomButtonStyle
 
     var body: some View {
         switch self {
@@ -91,6 +92,8 @@ enum NaviDestination: String, CaseIterable, View, Identifiable {
             GestureRecognitionDemo()
         case .CardFlipAnimation:
             CardFlipAnimationDemo()
+        case .CustomButtonStyle:
+            CustomButtonStyleDemo()
         }
     }
 }
